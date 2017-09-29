@@ -1,0 +1,90 @@
+<nav class="navbar navbar-toggleable-md navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar2">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand"><img src="https://res.cloudinary.com/disputebills/image/upload/v1462474206/blue-mark_cnzgry.png" alt="dispute Bills" style="width:34px;" >
+        </a>
+      </div>
+      <div id="navbar2" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="inactive"><a (click)="navigateToAccount()"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+          <li class="active"><a><span class="glyphicon glyphicon-user"></span> AddUser</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"  aria-expanded="false"><span class="glyphicon glyphicon-user"></span> {{ loginData.user.first_name}} <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a (click)="logout()">Log-Out</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+    <!--/.container-fluid -->
+  </nav>
+
+<div style="position:absolute;width:100%;" *ngFor="let alert of alerts">
+  <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout"> <div style="margin-left:40%;"><strong> Well Done !!! </strong> User successfully Created</div></alert>
+</div>
+  <div class="page-header" style="padding-left:20px;color:#ff5722;">
+   <h3><span class="glyphicon glyphicon-user"> </span> Add Users</h3>
+  </div>
+
+<div style="width:32%;margin-top:10%;" class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading"> Add User Details
+        </div>
+        <div class="panel-body">
+            <br>
+      <form class="form-horizontal" role="form">
+               <div class="form-group">
+                    <label for="firstName" class="col-sm-3 control-label">First Name</label>
+                    <div class="col-sm-9">
+                        <input type="text" [(ngModel)]="f_name"  (ngModelChange)="user.first_name=''" name="name" id="firstName" #fn placeholder="First Name" style=" width: 80%;" class="form-control" autofocus required>
+                        <span *ngIf="!has_error" class="help-block">First Name, eg.: Harry</span>
+                        <span *ngIf="has_error" style="color:red;" class="help-block validation" autofocus> {{user.first_name}}</span>
+                    </div>
+                </div>
+               <div class="form-group">
+                    <label for="lastName" class="col-sm-3 control-label">Last Name</label>
+                    <div class="col-sm-9">
+                        <input type="text" [(ngModel)]="l_name" (ngModelChange)="user.last_name=''" name="ln" id="lastName" #ln placeholder="Last Name" style=" width: 80%;" class="form-control" autofocus required>
+                        <span *ngIf="!has_error" class="help-block">Last Name, eg.: Smith</span>
+                        <span *ngIf="has_error" style="color:red;"  class="help-block validation" autofocus>{{user.last_name}}</span>
+                    </div>
+                </div>
+               <div class="form-group">
+                    <label for="branch" class="col-sm-3 control-label">Branch</label>
+                     <div class="col-sm-9">
+                        <input type="text" [(ngModel)]="b_name" name="br" id="branch"  (ngModelChange)="user.branch=''" #b placeholder="branch" style=" width: 80%;" class="form-control" autofocus required>
+                        <span *ngIf="!has_error" class="help-block">Branch Name, eg.: Pune, delhi</span>
+                        <span *ngIf="has_error" style="color:red;" class="help-block validation" autofocus> {{user.branch}}</span>
+                     </div>
+               </div>
+                <div class="form-group">
+                    <div class="col-sm-9 col-sm-offset-3">
+                        <button *ngIf="editEnable" type="button" style=" width: 80%;" class="btn btn-primary btn-block" (click)="save(fn.value,ln.value,b.value);">Save</button>
+<button *ngIf="!editEnable" type="button" style=" width: 80%;" class="btn btn-primary btn-block" (click)="edit(inputData.id,fn.value,ln.value,b.value);" [disabled]="inactive">Save Changes</button>
+                     </div>
+
+                </div>
+      </form>
+     </div>
+  </div>
+</div>
+<div>
+<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation" style="position:">
+  <div class="container">
+      <div class="row text-center" style="font-family: cursive; padding-top: 15px;"> © 2017. Made with Amazatic Solutions by Raj</div>
+  </div>
+</nav>

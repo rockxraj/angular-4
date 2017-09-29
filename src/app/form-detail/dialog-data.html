@@ -1,0 +1,35 @@
+<md-card style="Background : #ff4081; "><h4> Edit </h4></md-card>
+<br><br>
+<form>
+    <table class="example-full-width" cellspacing="0">
+        <tr>
+            <td>
+                <md-form-field class="example-full-width">
+                    <input mdInput placeholder="Email" #em [(ngModel)]="formData.data.email" name="email" (ngModelChange)="quali_error.email=''">
+                    <md-hint *ngIf="has_error && quali_error.email" align="" style="color:red"> {{quali_error.email[0]}}</md-hint>
+                </md-form-field>
+            </td>
+            <td>
+                <md-form-field class="example-full-width">
+                    <input  mdInput placeholder="Name" #nm [(ngModel)]="formData.data.name" (ngModelChange)="quali_error.name=''" name="name">
+                    <md-hint *ngIf="has_error && quali_error.name" align="" style="color:red"> {{quali_error.name[0]}}</md-hint>
+                </md-form-field>
+            </td>
+            <td>
+                    <md-select  placeholder="Qualification" [(ngModel)]="formData.data.qualification" name="Qualification">
+                        <md-option *ngFor="let q of qualis" [value]="q.key">{{ q.name }}</md-option>
+                        <md-hint *ngIf="has_error && quali_error.qualification" align="" style="color:red"> {{quali_error.qualification[0]}}</md-hint>
+                    </md-select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <md-radio-group name="more_options" [(ngModel)]="gender">
+                    <md-radio-button  value="Male" name="gender">Male</md-radio-button>
+                    <md-radio-button  value="Female" name="gender">Female</md-radio-button>
+                </md-radio-group>
+            </td>
+        </tr>
+    </table>
+    <div class="pull-right">  <button md-raised-button color="warn" (click)="close()">Cancel</button> </div>
+    <div class="pull-right" style="padding-right:15px;">  <button md-raised-button color="accent" (click)="submit(em.value, nm.value,formData.data.qualification,gender)">Save Changes</button> </div>

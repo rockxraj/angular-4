@@ -1,0 +1,169 @@
+  <nav class="navbar navbar-toggleable-md navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar2">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand"><img src="https://res.cloudinary.com/disputebills/image/upload/v1462474206/blue-mark_cnzgry.png" alt="dispute Bills" style="width:34px;" >
+        </a>
+      </div>
+      <div id="navbar2" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <!--<li><a routerLink="/account"><span class="glyphicon glyphicon-home"></span> Home</a></li>-->
+          <li class="dropdown active">
+            <a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span> Login <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li class="dropdown-header">Nav header</li>
+              <li><a href="#">Separated link</a></li>
+              <li><a>Log-Out</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+    <!--/.container-fluid -->
+
+ <carousel style="position:absolute;width:100%;">
+  <slide>
+    <img src="https://wallpaperscraft.com/image/winter_trees_snow_night_landscape_96069_2000x1335.jpg" alt="First slide">
+  </slide>
+  <slide>
+    <img src="https://wallpaperscraft.com/image/mountains_summer_lake_trees_forest_95632_1920x1080.jpg" alt="Second slide">
+  </slide>
+  <slide>
+    <img src="https://wallpaperscraft.com/image/lonely_island_ocean_nature_landscape_sea_water_trees_palms_84673_1920x1080.jpg" alt="Third slide">
+  </slide>
+  <slide>
+    <img src="https://wallpaperscraft.com/image/forest_trees_fog_110485_1920x1080.jpg" alt="Four slide">
+  </slide>
+  <slide>
+    <img src="https://wallpaperscraft.com/image/full_moon_stars_clouds_shadows_45767_1920x1080.jpg" alt="Third slide">
+  </slide>
+  <slide>
+    <img src="https://wallpaperscraft.com/image/autumn_park_the_avenue_trees_path_tile_wet_57308_1920x1080.jpg" alt="Third slide">
+  </slide>
+</carousel>
+    <!--<img src="https://wallpaperscraft.com/image/winter_trees_snow_night_landscape_96069_2000x1335.jpg" style="position:absolute;width:100%">-->
+  </nav>
+  <h1 style="position:absolute;color:white;left:37%;top:5%;font-family: cursive;"> Welcome To Rajendra's Blog</h1>
+  <div class="" style="margin-left:30%;margin-top: 4%;width: 40.5%;position:absolute;border:1px solid white;">
+<div class="" style="margin-left:13%;margin-right:15%;">
+<div class="page-header">
+<h1 class="colour" style="font-family: cursive;margin-left:26%;">Registration Form</h1>
+</div>
+
+        <form class="form-horizontal" role="form">
+               <div class="form-group">
+                    <label for="firstName" class="col-sm-3 control-label colour">First Name</label>
+                    <div class="col-sm-9">
+                        <input type="text" [(ngModel)]="f_name"  (ngModelChange)="user.first_name=''" name="name" id="firstName" #fn placeholder="First Name" style=" width: 80%;" class="form-control" autofocus required>
+                        <span *ngIf="!has_error" class="help-block colour">First Name, eg.: Harry</span>
+                        <span *ngIf="has_error" style="color:red;" class="help-block validation" autofocus> {{user.first_name}}</span>
+                    </div>
+                </div>
+               <div class="form-group">
+                    <label for="lastName" class="col-sm-3 control-label colour">Last Name</label>
+                    <div class="col-sm-9">
+                        <input type="text" [(ngModel)]="l_name" (ngModelChange)="user.last_name=''" name="ln" id="lastName" #ln placeholder="Last Name" style=" width: 80%;" class="form-control" autofocus required>
+                        <span *ngIf="!has_error" class="help-block colour">Last Name, eg.: Smith</span>
+                        <span *ngIf="has_error" style="color:red;"  class="help-block validation" autofocus>{{user.last_name}}</span>
+                    </div>
+                </div>
+               <div class="form-group">
+                    <label for="branch" class="col-sm-3 control-label colour">User Name</label>
+                     <div class="col-sm-9">
+                        <input type="text" [(ngModel)]="u_name" name="u_name"  (ngModelChange)="user.username[0]=''" #un placeholder="User Name" style=" width: 80%;" class="form-control" autofocus required>
+                        <span *ngIf="!has_error" class="help-block colour">User Name, eg.: John, Martin</span>
+                        <span *ngIf="has_error" style="color:red;" class="help-block validation" autofocus> {{user.username[0]}}</span>
+                     </div>
+               </div>
+               <div class="form-group">
+                    <label for="branch" class="col-sm-3 control-label colour">Password</label>
+                     <div class="col-sm-9">
+                        <input type="password" [(ngModel)]="pass" name="pass" (ngModelChange)="user.password[0]=''" #p placeholder="Password" style=" width: 80%;" class="form-control" autofocus required>
+                        <span *ngIf="!has_error" class="help-block colour">contains atleast 6 character</span>
+                        <span *ngIf="has_error" style="color:red;" class="help-block validation" autofocus> {{user.password[0]}}</span>
+                     </div>
+               </div>
+                <div class="form-group">
+                    <div class="col-sm-9 col-sm-offset-3">
+                        <button  type="button" style=" width: 80%;" class="btn btn-danger btn-block" (click)="register(fn.value,ln.value,un.value,p.value);">Register</button>
+                     </div>
+
+                </div>
+      </form>
+
+
+<h2 class="colour" style="margin-left:23%;font-family: cursive;">Already have an account ? </h2>
+<button type="submit" (click)="staticModal.show();has_login_error=false;" class="btn"style="background-color: rgba(0, 0, 0, 0.7);color:white;width:80%;margin-bottom: 15px;margin-left:10%;" >Login</button><br>
+
+<h2 class="colour" style="margin-left:12%;font-family: cursive;"> Sign in with </h2><br>
+<div style="margin-left:10%;">
+    <span style="padding:26px;"><img src="https://image.flaticon.com/icons/svg/145/145812.svg" style="width:60px"/> </span>
+    <span style="padding:56px;"><img src="https://image.flaticon.com/icons/svg/145/145802.svg" style="width:60px"/> </span>
+    <span style="padding:26px;"><img src="https://image.flaticon.com/icons/svg/187/187196.svg" style="width:60px"/> </span>
+</div>
+<br>
+</div><!-- end for class "row" -->
+</div><!-- end for class "container" -->
+<div style="position:fixed;top:63px;z-index:;width:100%;background-color:#97ff98;" *ngFor="let alert of alerts">
+  <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout"> <div style="margin-left:40%;"> <strong>Well Done !!! </strong> User successfully Registered </div></alert>
+</div>
+<div class="modal fade" bsModal #staticModal="bs-modal" [config]="{backdrop: 'static'}"
+     tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">Login</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="staticModal.hide();us.value='';ps.value=''">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="">
+          <form role="form">
+              <fieldset>
+                  <div class="row">
+                      <div class="" style="padding: 15px;margin-left: 24%;">
+                          <img class="profile-img"
+                               src="https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/user_male2-512.png" style="width:100px" alt="">
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-sm-12 col-md-10  col-md-offset-1 ">
+                          <div class="form-group">
+                              <div class="input-group">
+                                  <span class="input-group-addon">
+                                      <i class="glyphicon glyphicon-user"></i>
+                                  </span>
+                                  <input class="form-control" placeholder="Username" name="loginname" type="text" autofocus #us>
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <div class="input-group">
+                                  <span class="input-group-addon">
+                                      <i class="glyphicon glyphicon-lock"></i>
+                                  </span>
+                                  <input class="form-control" placeholder="Password" name="password" type="password" value="" #ps>
+                              </div>
+                          </div>
+                           <span *ngIf="has_login_error" style="color:red;" class="help-block validation" autofocus> {{userloginError}}</span>
+                          <div class="form-group">
+                              <input type="submit" class="btn btn-lg btn-primary btn-block" (click)="sendUserCredentials(us.value, ps.value)"  value="Sign in">
+                          </div>
+                      </div>
+                  </div>
+              </fieldset>
+          </form>
+
+      </div>
+    </div>
+  </div>
+</div>

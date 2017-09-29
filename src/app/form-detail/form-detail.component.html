@@ -1,0 +1,44 @@
+<md-card class="card"><h3> Form Details</h3></md-card>
+<br>
+<div class="example-container mat-elevation-z8">
+    <md-table #table [dataSource]="dataSource">
+
+        <!--- Note that these columns can be defined in any order.
+             The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- Position Column -->
+        <ng-container mdColumnDef="name">
+            <md-header-cell *mdHeaderCellDef><h5> Name</h5> </md-header-cell>
+            <md-cell *mdCellDef="let element"> {{element.name}} </md-cell>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container mdColumnDef="email">
+            <md-header-cell *mdHeaderCellDef> <h5> Email</h5> </md-header-cell>
+            <md-cell *mdCellDef="let element"> {{element.email}} </md-cell>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container mdColumnDef="qualification">
+            <md-header-cell *mdHeaderCellDef> <h5>Qualification</h5> </md-header-cell>
+            <md-cell *mdCellDef="let element"> {{element.qualification}} </md-cell>
+        </ng-container>
+
+        <!-- Color Column -->
+        <ng-container mdColumnDef="gender">
+            <md-header-cell *mdHeaderCellDef> <h5>Gender</h5> </md-header-cell>
+            <md-cell *mdCellDef="let element"> {{element.gender}} </md-cell>
+        </ng-container>
+        <ng-container mdColumnDef="actions">
+            <md-header-cell *mdHeaderCellDef> Actions </md-header-cell>
+            <md-cell *mdCellDef="let row" >
+                <button md-mini-fab (click)="edit(row.id)">
+                    <i class="material-icons">mode_edit</i>
+                </button>
+            </md-cell>
+        </ng-container>
+        <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
+        <md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>
+    </md-table>
+
+</div>

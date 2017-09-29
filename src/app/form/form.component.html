@@ -1,0 +1,117 @@
+<nav class="navbar navbar-toggleable-md navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar2">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand"><img src="https://res.cloudinary.com/disputebills/image/upload/v1462474206/blue-mark_cnzgry.png" alt="dispute Bills" style="width:34px;" >
+
+            </a>
+        </div>
+        <div id="navbar2" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="inactive"><a routerLink="/account"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                <li class="active"><a><span class="glyphicon glyphicon-list-alt"></span> Form </a></li>
+                <li class="inactive"><a routerLink="/form-detail"><span class="glyphicon glyphicon-home"></span>Form-Detail</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"  aria-expanded="false"><span class="glyphicon glyphicon-user"></span>  {{ loginData.user.first_name}} <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li class="dropdown-header">Nav header</li>
+                        <li><a href="#">Separated link</a></li>
+                        <li><a (click)="logout()">Log-Out</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+    <!--/.container-fluid -->
+</nav>
+
+<div style="position:fixed;width:100%;margin-top:350px;" *ngFor="let alert of alerts">
+    <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout"> <div style="margin-left:40%;"><strong> Well Done !!! </strong> User successfully Created</div></alert>
+</div>
+
+<div class="container">
+    <md-card>
+        <md-card-header class="formheader">
+            <md-card-title><h3>Form Data Registration</h3> </md-card-title>
+        </md-card-header>
+        <br><br>
+        <form>
+            <div class="form-group row">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="inputEmail3" [(ngModel)]="eml" name="abc"  #em placeholder="Email">
+                    <span *ngIf="has_error && errorData.email"  (ngModelChange)="errorData.email[0]=''" style="color:red;" class="help-block validation" autofocus> {{errorData.email[0]}}</span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputText3" class="col-sm-2 col-form-label">Name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputtext3"  [(ngModel)]="nam" name="abcd" #nm placeholder="Name">
+                    <span *ngIf="has_error && errorData.name" style="color:red;" class="help-block validation" autofocus> {{errorData.name[0]}}</span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label"> Qualification </label>
+                <div class="col-sm-10">
+                    <select class="form-control form-control-lg" #ql>
+                        <option> --None-- </option>
+                        <option> B.E.</option>
+                        <option> MBA </option>
+                        <option> MCA </option>
+                    </select>
+                    <span *ngIf="has_error && errorData.qualification" style="color:red;" class="help-block validation" (ngModelChange)="errorData.qualification[0]=''" autofocus> {{errorData.qualification[0]}}</span>
+                </div>
+            </div>
+            <fieldset class="form-group row">
+                <legend class="col-form-legend col-sm-2">Gender</legend>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" [(ngModel)]="genderValue"  value="Male" checked>
+                            Male
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="gridRadios" [(ngModel)]="genderValue" id="gridRadios2" value="Female">
+                            Female
+                        </label>
+                    </div>
+                    <div class="form-check disabled">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
+                            Other
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="form-group row">
+                <label class="col-sm-2"> Licence</label>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" [(ngModel)]="licValue"  name="lic" type="checkbox"> i agree with terms and condition.
+                        </label>
+                    </div>
+                    <span *ngIf="licError" style="color:red;" class="help-block validation" autofocus> Select the Agreement</span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="offset-sm-2 col-sm-9 pull-right">
+                    <button type="submit" class="btn btn-primary" (click)="submitData(em.value, nm.value, ql.value, genderValue, licValue)"> Submit </button>
+                </div>
+            </div>
+        </form>
+    </md-card>
+</div>

@@ -1,0 +1,6 @@
+td,.bar, .curs {
+    cursor: pointer;
+}
+
+.search:hover {color: goldenrod;}
+body { padding-bottom: 70px; }
