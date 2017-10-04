@@ -11,7 +11,9 @@ import { Ng2OrderModule } from 'ng2-order-pipe';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { CookieModule } from 'ngx-cookie';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSidenavModule,MatInputModule,MatRadioModule,MdDialog,MatGridListModule,MatButtonModule,MatIconModule,MatTableModule,MatCardModule, MatDialogModule,MatChipsModule,MdButtonModule,MdDialogRef,MdSnackBar, MdCheckboxModule, MatSnackBarModule, MatSelectModule} from '@angular/material';
+
+/*import { MatSidenavModule,MatInputModule,MatRadioModule,MdDialog,MatGridListModule,MatButtonModule,MatIconModule,MatTableModule,MatCardModule, MatDialogModule,MatChipsModule,MdButtonModule,MdDialogRef,MdSnackBar, MdCheckboxModule, MatSnackBarModule, MatSelectModule} from '@angular/material';
+ */
 
 import { AppComponent } from './app.component';
 import { AppService } from './app.service';
@@ -49,7 +51,7 @@ import { FormDetailComponent, DialogDataExampleDialog } from './form-detail/form
         CarouselModule,
         CookieModule,
         BrowserAnimationsModule,
-        MdButtonModule,
+/*        MdButtonModule,
         MdCheckboxModule,
         MatRadioModule,
         MatCardModule,
@@ -62,7 +64,7 @@ import { FormDetailComponent, DialogDataExampleDialog } from './form-detail/form
         MatGridListModule,
         MatInputModule,
         MatSnackBarModule,
-        MatSelectModule,
+        MatSelectModule,*/
         RouterModule.forRoot ([
             { path: 'user', component: UserComponent, canActivate: [ AuthGuard ] },
             { path: 'form', component: FormComponent, canActivate: [ AuthGuard ] },
