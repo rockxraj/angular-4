@@ -84,7 +84,7 @@ export class LoginComponent implements OnInit {
     }
 
     private handleMeError(err: any){
-        console.log(err._body);
+        console.log('login Handle Error =>', err._body);
         this.userloginError = err._body.split(':')[1].slice(2,err._body.split(':')[1].indexOf('.'));
         console.log('userLoginError =>', this.userloginError);
         console.log(err._body.split(':')[1].slice(2,err._body.split(':')[1].indexOf('.')));

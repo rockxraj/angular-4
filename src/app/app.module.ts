@@ -14,7 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 /*import { MatSidenavModule,MatInputModule,MatRadioModule,MdDialog,MatGridListModule,MatButtonModule,MatIconModule,MatTableModule,MatCardModule, MatDialogModule,MatChipsModule,MdButtonModule,MdDialogRef,MdSnackBar, MdCheckboxModule, MatSnackBarModule, MatSelectModule} from '@angular/material';*/
 
-import{ MdCheckboxModule} from '@angular/material';
+import{ MdCheckboxModule,MdTableModule, MdSelectModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { AppService } from './app.service';
@@ -53,6 +53,8 @@ import { FormDetailComponent, DialogDataExampleDialog } from './form-detail/form
         CookieModule,
         BrowserAnimationsModule,
         MdCheckboxModule,
+        MdTableModule,
+        MdSelectModule,
  /*       MatRadioModule,
         MatCardModule,
         MatTableModule,
