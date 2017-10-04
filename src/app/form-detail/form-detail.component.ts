@@ -6,7 +6,7 @@ import {DataSource} from '@angular/cdk/collections';
 
 /*import {MatSidenavModule,MdDialogRef,MdSnackBar,MatRadioModule,MatInputModule,MdDialog,MD_DIALOG_DATA,MatButtonModule,MatIconModule,MatGridListModule,MatDialogModule,MatTableModule,MatSelectModule, MdSnackBarConfig, MdSnackBarRef} from '@angular/material';*/
 
-import{MdDialogRef, MdDialog, MdDialog, MdSnackBar, MD_DIALOG_DATA, MdSnackBarConfig, MdSnackBarRef} from '@angular/material';
+import{MdDialogRef, MdDialog, MdSnackBar, MD_DIALOG_DATA, MdSnackBarConfig, MdSnackBarRef} from '@angular/material';
 
 import { FormDetailService } from './form-detail.service';
 import 'rxjs/add/observable/of';

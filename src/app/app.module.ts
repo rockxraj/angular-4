@@ -14,7 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 /*import { MatSidenavModule,MatInputModule,MatRadioModule,MdDialog,MatGridListModule,MatButtonModule,MatIconModule,MatTableModule,MatCardModule, MatDialogModule,MatChipsModule,MdButtonModule,MdDialogRef,MdSnackBar, MdCheckboxModule, MatSnackBarModule, MatSelectModule} from '@angular/material';*/
 
-import{ MdCheckboxModule,MatDialogModule,MatInputModule,MatSnackBarModule,MatRadioModule,MatCardModule,MatTableModule,MatButtonModule,MatSelectModule} from '@angular/material';
+import{ MdCheckboxModule} from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { AppService } from './app.service';
@@ -53,14 +53,14 @@ import { FormDetailComponent, DialogDataExampleDialog } from './form-detail/form
         CookieModule,
         BrowserAnimationsModule,
         MdCheckboxModule,
-        MatRadioModule,
+ /*       MatRadioModule,
         MatCardModule,
         MatTableModule,
         MatButtonModule,
         MatDialogModule,
         MatInputModule,
         MatSnackBarModule,
-        MatSelectModule,
+        MatSelectModule,*/
         RouterModule.forRoot ([
             { path: 'user', component: UserComponent, canActivate: [ AuthGuard ] },
             { path: 'form', component: FormComponent, canActivate: [ AuthGuard ] },

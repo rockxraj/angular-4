@@ -5,7 +5,7 @@ import { AppService } from '../app.service';
 import { Router } from '@angular/router';
 import {Observable} from 'rxjs/Observable';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { MatCardModule, MatChipsModule} from '@angular/material';
+//import { MatCardModule, MatChipsModule} from '@angular/material';
 import { NgXCookies } from 'ngx-cookies';
 
 @Component({
