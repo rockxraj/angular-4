@@ -7,7 +7,8 @@ import { Observable } from 'rxjs';
 export class FormDetailService {
 
     constructor( private http: Http) { }
-    url = "http://127.0.0.1:8000/form/";
+//    url = "http://127.0.0.1:8000/form/";
+    url = "https://dj-raj.herokuapp.com/form/";
 
     getFormData(): Observable<any> {
         let headers = new Headers({ 'Content-Type': 'application/json' });

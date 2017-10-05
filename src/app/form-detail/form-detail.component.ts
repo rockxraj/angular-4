@@ -15,7 +15,14 @@ import 'rxjs/add/observable/of';
 @Component({
     selector: 'app-form-detail',
     templateUrl: './form-detail.component.html',
-    styleUrls: ['./form-detail.component.css']
+    styleUrls: ['./form-detail.component.css'],
+providers: [
+    { provide: MdDialog, useValue: {} },
+    { provide: MdSnackBar, useValue: {} },
+     { provide: MdSnackBarRef, useValue: {} },
+    { provide: MdSnackBarConfig, useValue: {} },
+
+]
 })
 
 
@@ -64,7 +71,6 @@ export class FormDetailComponent implements OnInit {
                 snackBar: this.snackBar
             }
         });
-
         this.dialogRef.afterClosed().subscribe(result => {
             this.getData();
             console.log('result is', result);
@@ -114,7 +120,7 @@ export class ExampleDataSource extends DataSource<any>  {
 @Component({
     selector: 'dialog-data-example-dialog',
     templateUrl: 'dialog-data.html',
-//    styles: ['.mat-select-arrow { font-size : 14px;}']
+
 })
 export class DialogDataExampleDialog {
     formData: any;

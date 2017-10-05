@@ -8,8 +8,8 @@ export class UserService {
 
     constructor( private http: Http) { }
 
-    url = "http://127.0.0.1:8000/account/";
-
+  //  url = "http://127.0.0.1:8000/account/";
+    url = "https://dj-raj.herokuapp.com/account";
     getData(){
         let headers = new Headers({ 'Content-Type': 'application/json', 'Authorization' : 'Bearer ' +  NgXCookies.getCookie('login_cookie') });
         let options = new RequestOptions({ headers: headers });

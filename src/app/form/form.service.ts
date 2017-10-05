@@ -7,7 +7,8 @@ import { NgXCookies } from 'ngx-cookies';
 export class FormService {
 
     constructor( private http: Http) { }
-    url = "http://127.0.0.1:8000/form/";
+//    url = "http://127.0.0.1:8000/form/";
+    url = "https://dj-raj.herokuapp.com/form";
 
     formData(email: string, name: string, quali: string, gender: string, licen: boolean){
         let headers = new Headers({ 'Content-Type': 'application/json' });
